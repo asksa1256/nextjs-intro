@@ -1,7 +1,20 @@
-import '../styles/globals.css'
+// index.js's blueprint
+// next.js will call this file automatically. (before call index.js)
+import "../styles/globals.css";
+import Layout from "../components/Layout";
 
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+export default function App({Component, pageProps}){
+  return (
+    <Layout>
+      <Component {...pageProps}/>
+      {/* <style jsx global>{`
+        a {
+          text-decoration: none;
+        }
+        .active {
+          color: tomato;
+        }
+      `}</style> */}
+    </Layout>
+  )
 }
-
-export default MyApp
